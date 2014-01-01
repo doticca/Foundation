@@ -1,0 +1,21 @@
+﻿@using Orchard.UI.Resources;
+@{
+    RegisterLink(new LinkEntry { Type = "text/css", Rel = "stylesheet", Href = Href("../css/site.css") }); 
+}
+<div class="off-canvas-wrap">
+    <div class="inner-wrap">
+        @if (Model.Overflow != null)
+        {
+            @Display(Model.Overflow)    
+        }
+        @if (Model.Navigation != null)
+        {
+            @Display(Model.Navigation)            
+        }
+        @if (Model.Content != null)
+        {
+            @Display(Model.Content)    
+        }
+        <a class="exit-off-canvas"></a>
+    </div>
+</div>

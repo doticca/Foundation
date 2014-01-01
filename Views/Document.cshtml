@@ -1,0 +1,26 @@
+﻿@using Orchard.Mvc.Html;
+@using Orchard.UI.Resources;
+@{
+    string url = Request.Url.AbsolutePath.ToString().ToLower();
+    string title = Convert.ToString(Model.Title);
+    string siteName = Convert.ToString(WorkContext.CurrentSite.SiteName);
+}
+<!DOCTYPE html>
+<html lang="@WorkContext.CurrentCulture" class="static @Html.ClassForPage()">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta content="IE=edge,chrome=1" name="X-UA-Compatible" />
+    <title>@Html.Title(title, siteName)</title>
+    @Display(Model.Head)
+</head>
+<body>
+    @Display(Model.Body)
+    @Display(Model.Tail)
+<script>
+    $(document).foundation();
+</script>
+</body>
+</html>
