@@ -1,4 +1,101 @@
-﻿/*3623*/
+﻿.antialiased {
+    -webkit-font-smoothing: antialiased;
+}
+/*override/remove the drop down arrow*/
+.top-bar-section .has-dropdown > a:after {
+    display:none;
+}
+/*override the padding because of the dropdown arrow*/
+.top-bar-section .has-dropdown>a {
+    padding-right: 15px !important;
+}
+/*sidebar*/
+.sidebar {
+    background: #fafafa;
+    padding: 32px 20px;
+}
+.side-nav li a:not(.button) {
+    display: block;
+    color: #008cba;
+}
+.side-nav li a.button {
+color:white;
+}
+.side-nav {
+    display: block;
+    margin: 0;
+    padding: 0.77778rem 0;
+    list-style-type: none;
+    list-style-position: inside;
+    font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
+}
+.side-nav .heading {
+    text-transform: uppercase;
+}
+.side-nav li {
+    margin: 0;
+    padding: 0;
+    font-size: 0.77778rem;
+}
+.side-nav .heading, .sidebar form {
+    padding: 2px 0px;
+}
+.side-nav li a:not(.button) {
+    padding: 0.33333rem 0;
+}
+.side-nav li a:hover:not(.button) {
+    color: #004054;
+}
+.sidebar .side-nav li:hover > a:first-child:not(.button) {
+    color: #006887;
+    position: relative;
+    margin: 0 -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: rgba(0, 64, 84, 0.03);
+}
+.side-nav li.active > a:first-child:not(.button) {
+color: #4d4d4d;
+font-weight: normal;
+font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
+}
+.sidebar .side-nav li.active > a:first-child:not(.button) {
+font-weight: bold;
+color: #008fba;
+position: relative;
+margin: 0 -20px;
+padding-left: 20px;
+padding-right: 20px;
+}
+/*1554*/
+button, .button {
+cursor: pointer;
+font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+font-weight: normal;
+line-height: normal;
+margin: 0 0 1.25rem;
+position: relative;
+text-decoration: none;
+text-align: center;
+display: inline-block;
+padding-top: 1rem;
+padding-right: 2rem;
+padding-bottom: 1.0625rem;
+padding-left: 2rem;
+font-size: 1rem;
+background-color: #008cba;
+border-color: #007ba1;
+color: white;
+-webkit-transition: background-color 300ms ease-out;
+-moz-transition: background-color 300ms ease-out;
+transition: background-color 300ms ease-out;
+padding-top: 1.0625rem;
+padding-bottom: 1rem;
+-webkit-appearance: none;
+border: none;
+font-weight: normal !important;
+}
+/*3623*/
 div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td {
 margin: 0;
 padding: 0;
@@ -19,6 +116,51 @@ line-height: 1.6;
 margin-bottom: 1.25rem;
 list-style-position: outside;
 font-family: inherit;
+}
+/*3924*/
+.top-bar .button {
+    padding-top: 0.45rem;
+    padding-bottom: 0.35rem;
+    margin-bottom: 0;
+    font-size: 0.75rem;
+}
+/*4010*/
+.top-bar-section ul li > a {
+    display: block;
+    width: 100%;
+    color: white;
+    padding: 12px 0 12px 0;
+    padding-left: 15px;
+    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-size: 0.8125rem;
+    font-weight: normal;
+    background: #333333;
+}
+/*4020*/
+.top-bar-section ul li > a.button {
+    background: #008cba;
+    font-size: 0.8125rem;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+/*4092*/
+@media only screen and (min-width: 40.063em){
+    /*4108*/
+    .top-bar input, .top-bar .button {
+        font-size: 0.875rem;
+        position: relative;
+        top: 7px;
+    }
+    /*4127*/
+    .top-bar-section ul li {
+        float: left;
+    }
+    /*4176*/
+    .top-bar-section .has-form {
+        background: #333333;
+        padding: 0 15px;
+        height: 45px;
+    }
 }
 /*4194*/
 .off-canvas-wrap, .inner-wrap, nav.tab-bar, .left-off-canvas-menu, .left-off-canvas-menu *, .right-off-canvas-menu, .move-right a.exit-off-canvas, .move-left a.exit-off-canvas {
@@ -109,4 +251,10 @@ font-size: 0.775rem !important;
 /*5557*/
 ul.off-canvas-list li label.first {
 padding-top: 0.75rem !important;
+}
+.row {
+    max-width: 80rem;
+}
+h1 {
+margin-top: 20px;
 }

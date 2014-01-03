@@ -1,21 +1,45 @@
 ﻿@using Orchard.UI.Resources;
 @{
     RegisterLink(new LinkEntry { Type = "text/css", Rel = "stylesheet", Href = Href("../css/site.css") }); 
+    Model.Id = "layout-wrapper";
+    if (Model.Overflow != null) {
+        Model.Classes.Add("off-canvas-wrap");
+    }
+    var tag = Tag(Model, "div"); // using Tag so the layout div gets the classes, id and other attributes added to the Model
 }
-<div class="off-canvas-wrap">
-    <div class="inner-wrap">
-        @if (Model.Overflow != null)
-        {
-            @Display(Model.Overflow)    
-        }
-        @if (Model.Navigation != null)
-        {
-            @Display(Model.Navigation)            
-        }
-        @if (Model.Content != null)
-        {
-            @Display(Model.Content)    
-        }
-        <a class="exit-off-canvas"></a>
-    </div>
+@tag.StartElement
+<div class="inner-wrap">
+    @if (Model.Overflow != null)
+    {
+        @Display(Model.Overflow)    
+    }
+    @if (Model.Navigation != null)
+    {
+        @Display(Model.Navigation)            
+    }
+    @if (Model.Overflow != null)
+    {
+        <a class="exit-off-canvas" href="#"></a>
+    }
+    <section role="main">
+        <div class="row">
+            @if (Model.SideNav != null)
+            {
+                <div class="large-3 medium-4 columns">
+                    @Display(Model.SideNav)
+                </div>
+                if (Model.Content != null)
+                {
+                    <div class="large-9 medium-8 columns">
+                        @Display(Model.Content)
+                    </div>
+                }
+            }
+            else if (Model.Content != null) 
+            { 
+                @Display(Model.Content)  
+            }
+        </div>
+    </section>
 </div>
+@tag.EndElement
