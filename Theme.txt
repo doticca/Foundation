@@ -2,6 +2,6 @@ Name: Foundation
 Author: Fotis G. Pappas (fotisgpap)
 Website: https://github.com/grapto/Foundation
 Description: Foundation v5 Theme for Orchard CMS.
-Version: 5.0.2
-Zones: Navigation, Overflow, SideNav, Content
+Version: 5.0.2.0
+Zones: Overflow, Navigation, Featured, SideNav, Content
 Dependencies: Contrib.Foundation

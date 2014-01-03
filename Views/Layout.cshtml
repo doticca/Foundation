@@ -21,25 +21,32 @@
     {
         <a class="exit-off-canvas" href="#"></a>
     }
+    @if (Model.Featured != null)
+    {
+        @Display(Model.Featured)
+    }
     <section role="main">
+    @if (Model.SideNav != null)
+    {
         <div class="row">
-            @if (Model.SideNav != null)
+            <div class="large-3 medium-4 columns">
+                @Display(Model.SideNav)
+            </div>
+            @if (Model.Content != null)
             {
-                <div class="large-3 medium-4 columns">
-                    @Display(Model.SideNav)
-                </div>
-                if (Model.Content != null)
-                {
-                    <div class="large-9 medium-8 columns">
-                        @Display(Model.Content)
-                    </div>
-                }
-            }
-            else if (Model.Content != null) 
-            { 
-                @Display(Model.Content)  
+            <div class="large-9 medium-8 columns">
+                @Display(Model.Content)
+            </div>
             }
         </div>
+    }
+    else if (Model.Content != null)
+    {
+        <div class="row centered-text">
+            @Display(Model.Content)
+        </div>
+    }
+
     </section>
 </div>
 @tag.EndElement
