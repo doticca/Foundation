@@ -7,6 +7,13 @@
     }
     var tag = Tag(Model, "div"); // using Tag so the layout div gets the classes, id and other attributes added to the Model
 }
+@if (Model.Hidden != null)
+{
+    <div class="hidden">
+        @Display(Model.Hidden)
+    </div>
+}
+
 @tag.StartElement
 <div class="inner-wrap">
     @if (Model.Overflow != null)
@@ -42,9 +49,7 @@
     }
     else if (Model.Content != null)
     {
-        <div class="row centered-text">
             @Display(Model.Content)
-        </div>
     }
 
     </section>

@@ -1,12 +1,23 @@
-﻿.antialiased {
-    -webkit-font-smoothing: antialiased;
+﻿.main-header, 
+.quad-promo,
+.left-off-canvas-toggle, 
+p.lead, nav, 
+.off-canvas-list, 
+.side-nav, 
+button, 
+.top-bar-section,
+.top-bar-section a,
+.top-bar-section ul li > a,
+.button,
+.left-off-canvas-menu,
+h1, h2, h3, h4, h5, h6{
+    font-family: "proxima-nova", "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 }
-.centered-text {
-    text-align: center;
-}
+
 .row {
     max-width: 80rem;
 }
+
 /*override/remove the drop down arrow*/
 .top-bar-section .has-dropdown > a:after {
     display:none;
@@ -33,7 +44,6 @@ color:white;
     padding: 0.77778rem 0;
     list-style-type: none;
     list-style-position: inside;
-    font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
 }
 .side-nav .heading {
     text-transform: uppercase;
@@ -63,7 +73,6 @@ color:white;
 .side-nav li.active > a:first-child:not(.button) {
 color: #4d4d4d;
 font-weight: normal;
-font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
 }
 .sidebar .side-nav li.active > a:first-child:not(.button) {
 font-weight: bold;
@@ -76,7 +85,6 @@ padding-right: 20px;
 /*1554*/
 button, .button {
 cursor: pointer;
-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 font-weight: normal;
 line-height: normal;
 margin: 0 0 1.25rem;
@@ -140,7 +148,6 @@ font-family: inherit;
 }
 /*3978*/
 h1, h2, h3, h4, h5, h6 {
-font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 font-weight: 300;
 font-style: normal;
 color: #222222;
@@ -156,7 +163,6 @@ line-height: 1.4;
     color: white;
     padding: 12px 0 12px 0;
     padding-left: 15px;
-    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
     font-size: 0.8125rem;
     font-weight: normal;
     background: #333333;
@@ -263,7 +269,6 @@ border-bottom: none !important;
 font-size: 1.25rem;
 padding: 0.2rem 0.95rem !important;
 color: #cccccc;
-font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 font-weight: 500;
 }
 /*5551*/
@@ -277,11 +282,3 @@ font-size: 0.775rem !important;
 ul.off-canvas-list li label.first {
 padding-top: 0.75rem !important;
 }
-/*5713*/
-.top-bar-section ul li > a {
-font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
-}
-h1 {
-    margin-top: 20px;
-}
-

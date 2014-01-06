@@ -1,0 +1,7 @@
+﻿<Placement>
+  <Match DisplayType="Detail">
+    <!-- hide summary, show full content, for Detail -->
+    <Place 
+           Parts_Common_Metadata="-"/>
+  </Match>
+</Placement>
