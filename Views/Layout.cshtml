@@ -24,34 +24,113 @@
     {
         @Display(Model.Navigation)            
     }
-    @if (Model.Overflow != null)
-    {
-        <a class="exit-off-canvas" href="#"></a>
-    }
-    @if (Model.Featured != null)
-    {
-        @Display(Model.Featured)
-    }
     <section role="main">
-    @if (Model.SideNav != null)
-    {
-        <div class="row">
-            <div class="large-3 medium-4 columns">
-                @Display(Model.SideNav)
-            </div>
-            @if (Model.Content != null)
-            {
-            <div class="large-9 medium-8 columns">
-                @Display(Model.Content)
-            </div>
-            }
-        </div>
-    }
-    else if (Model.Content != null)
-    {
-            @Display(Model.Content)
-    }
+        @if (Model.SubMenu != null)
+        {
+            @Display(Model.SubMenu)
+        }
+        @if (Model.Overflow != null)
+        {
+            <a class="exit-off-canvas" href="#"></a>
+        }
+        @if (Model.Featured != null)
+        {
+            @Display(Model.Featured)
+        }
 
+        @if (Model.SideNav != null)
+        {
+            <div class="row">
+                <div class="large-3 medium-4 columns">
+                    @Display(Model.SideNav)
+                </div>
+                @if (Model.Content != null)
+                {
+                    <div class="large-9 medium-8 columns">
+                        @Display(Model.Content)
+                    </div>
+                }
+            </div>
+        }
+        else if (Model.Content != null)
+        {
+            @Display(Model.Content)
+        }
+
+        @if (Model.FooterQuadFirst != null || Model.FooterQuadSecond != null || Model.FooterQuadThird != null || Model.FooterQuadFourth != null ||
+            Model.FooterTopFirst != null || Model.FooterTopSecond != null || Model.FooterTopThird != null || Model.FooterTopFourth != null)
+        {
+            <div class="footer-top">
+                @if (Model.FooterTopFirst != null || Model.FooterTopSecond != null || Model.FooterTopThird != null || Model.FooterTopFourth != null)
+                {
+                    <div class="row property">
+                        <div class="large-4 columns">
+                            <div class="property-info">
+                                @if (Model.FooterTopFirst != null)
+                                {
+                                    @Display(Model.FooterTopFirst)
+                                }
+                            </div>
+                        </div>
+                        <div class="large-8 columns">
+                            <div class="row collapse">
+                                <div class="large-4 columns">
+                                    @if (Model.FooterTopSecond != null)
+                                    {
+                                        @Display(Model.FooterTopSecond)
+                                    }
+                                </div>
+                                <div class="large-4 columns">
+                                    @if (Model.FooterTopThird != null)
+                                    {
+                                        @Display(Model.FooterTopThird)
+                                    }
+                                </div>
+                                <div class="large-4 columns">
+                                    @if (Model.FooterTopFourth != null)
+                                    {
+                                        @Display(Model.FooterTopFourth)
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                @if (Model.FooterQuadFirst != null || Model.FooterQuadSecond != null || Model.FooterQuadThird != null || Model.FooterQuadFourth != null){
+                <div class="row global">
+                    <div class="large-3 small-6 columns">
+                        @if (Model.FooterQuadFirst != null)
+                        {
+                            @Display(Model.FooterQuadFirst)
+                        }
+                    </div>
+                    <div class="large-3 small-6 columns">
+                        @if (Model.FooterQuadSecond != null)
+                        {
+                            @Display(Model.FooterQuadSecond)
+                        }
+                    </div>
+                    <div class="large-3 small-6 columns">
+                        @if (Model.FooterQuadThird != null)
+                        {
+                            @Display(Model.FooterQuadThird)
+                        }
+                    </div>
+                    <div class="large-3 small-6 columns">
+                        @if (Model.FooterQuadFourth != null)
+                        {
+                            @Display(Model.FooterQuadFourth)
+                        }
+                    </div>
+                </div> 
+                }
+            </div>
+        }
+
+        @if (Model.Footer != null)
+        {
+            @Display(Model.Footer)
+        }
     </section>
 </div>
 @tag.EndElement

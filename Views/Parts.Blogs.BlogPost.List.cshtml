@@ -1,0 +1,16 @@
+﻿@{
+    Model.Metadata.Wrappers.Clear();
+    IEnumerable<object> blogPosts = Model.ContentItems;
+}
+<div class="row bump-25">
+    <div class="large-12 columns">
+        <div class="post-box">
+            @Display(Model.ContentItems)
+            @if (blogPosts == null || blogPosts.Count() < 1)
+            {
+
+                <p>@T("There are no posts for this blog.")</p>
+            }
+        </div>
+    </div>
+</div>

@@ -10,6 +10,10 @@ button,
 .top-bar-section ul li > a,
 .button,
 .left-off-canvas-menu,
+.subnav-header,
+.subnav-header a,
+.footer-top, .footer-bottom,
+.widget-recent-blog-posts,
 h1, h2, h3, h4, h5, h6{
     font-family: "proxima-nova", "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 }
@@ -71,17 +75,46 @@ color:white;
     background: rgba(0, 64, 84, 0.03);
 }
 .side-nav li.active > a:first-child:not(.button) {
-color: #4d4d4d;
-font-weight: normal;
+    color: #4d4d4d;
+    font-weight: normal;
 }
 .sidebar .side-nav li.active > a:first-child:not(.button) {
-font-weight: bold;
-color: #008fba;
-position: relative;
-margin: 0 -20px;
-padding-left: 20px;
-padding-right: 20px;
+    font-weight: bold;
+    color: #008fba;
+    position: relative;
+    margin: 0 -20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
+/* SubNav */
+.subnav-header {
+    background: #B8D30B;
+}
+/* Footer */
+.footer-top {
+    background: #afc908;
+    color: white;
+}
+    .footer-top .global .footer-link-block span {
+            color: white;
+    }
+.footer-bottom {
+    background: #333;
+}
+/* Blockquote */
+blockquote {
+font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 1.5em;
+line-height: 32px;
+padding: 0;
+border-left: none;
+margin-top: 0;
+color: #555;
+position: relative;
+padding-right: 50px;
+background: url(img/blockquote.png) no-repeat left 7px;
+}
+
 /*1554*/
 button, .button {
 cursor: pointer;
@@ -92,9 +125,11 @@ position: relative;
 text-decoration: none;
 text-align: center;
 display: inline-block;
-padding-top: 1rem;
+/*padding-top: 1rem;*/
+padding-top: 0.8125em;
+padding-bottom: 0.75em;
 padding-right: 2rem;
-padding-bottom: 1.0625rem;
+/*padding-bottom: 1.0625rem;*/
 padding-left: 2rem;
 font-size: 1rem;
 background-color: #008cba;
@@ -103,8 +138,6 @@ color: white;
 -webkit-transition: background-color 300ms ease-out;
 -moz-transition: background-color 300ms ease-out;
 transition: background-color 300ms ease-out;
-padding-top: 1.0625rem;
-padding-bottom: 1rem;
 -webkit-appearance: none;
 border: none;
 font-weight: normal !important;
@@ -118,11 +151,11 @@ padding-left: 2.25rem;
 font-size: 1.25rem;
 }
 /*3623*/
-div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td {
+/*div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td {
 margin: 0;
 padding: 0;
 direction: ltr;
-}
+}*/
 /*3685*/
 hr {
 border: solid #dddddd;
