@@ -1,0 +1,90 @@
+﻿@*@Display(Model.ContentItems)*@
+@using System.Text.RegularExpressions
+@functions{
+    public List<Uri> FetchLinksFromSource(string htmlSource)
+    {
+        List<Uri> links = new List<Uri>();
+        string regexImgSrc = @"<img[^>]*?src\s*=\s*[""']?([^'"" >]+?)[ '""][^>]*?>";
+        MatchCollection matchesImgSrc = Regex.Matches(htmlSource, regexImgSrc, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        foreach (Match m in matchesImgSrc)
+        {
+            string href = m.Groups[1].Value;
+            links.Add(new Uri(href));
+        }
+        return links;
+    }
+}
+@using Orchard.ContentManagement;
+@using Orchard.Blogs.Models;
+@{
+    IEnumerable<object> blogPosts = Model.ContentItems.ContentItems;
+}
+
+@if (blogPosts == null || blogPosts.Count() < 1)
+{
+    <p>@T("No posts.")</p>
+}
+else
+{
+    <div class="row">
+        <div class="large-12 columns">
+            @*<div class="post-box">*@
+                @foreach (dynamic post in blogPosts)
+                {
+                    DateTime date = post.ContentItem.CommonPart.CreatedUtc;
+                    ContentItem contentItem = post.ContentItem;
+                    var blogPostPart = contentItem.As<BlogPostPart>();
+
+                    string bodyHtml = blogPostPart.Text.ToString();
+                    List<Uri> links = FetchLinksFromSource(bodyHtml);
+                    
+                    
+                    var body = new HtmlString(Html.Excerpt(bodyHtml, 300).ToString().Replace(Environment.NewLine, "</p>" + Environment.NewLine + "<p>"));
+
+
+                    <div class="post">
+                        <h1 class="light centered-text">
+                            <a href="@Url.ItemDisplayUrl((IContent)post.ContentItem)">@Html.Raw(post.ContentItem.TitlePart.Title)</a>
+                        </h1>
+                        @*<div class="row">
+                            <div class="large-8 columns large-centered">
+                                <div class="comment-author-line">
+                                    <p class="centered-text">
+                                        @(post.ContentItem.CommonPart.Owner.UserName) wrote this on @(date.ToString("MMMM d, yyyy")).
+                                    </p>
+                                </div>
+                            </div>
+                        </div>*@
+                        <div class="row">
+                            <div class="large-8 columns large-centered">
+                                <div class="new-post">
+                                    @body
+                                    @*<br/>
+                                    <p class="centered-text">
+                                        <a href="@Url.ItemDisplayUrl((IContent)post.ContentItem)" class="button top-space">Read more</a>
+                                    </p>*@
+</div>
+                            </div>
+                        </div>
+                        @if(links.Count()>0){
+                        <div class="row">
+                            <div class="large-10 large-centered columns">
+                                <a href="@Url.ItemDisplayUrl((IContent)post.ContentItem)">
+                                    <img src="@links[0]">
+                                </a>
+                            </div>
+                        </div>
+                        }
+                        @if(blogPosts.Count()>1){
+                        <div class="row">
+                            <div class="large-12 columns">
+                                <hr class="dotted">
+                            </div>
+                        </div>
+                        }
+                    </div>
+                }
+            @*</div>*@
+        </div>
+    </div>
+}

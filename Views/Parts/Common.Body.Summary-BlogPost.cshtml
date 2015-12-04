@@ -1,0 +1,7 @@
+﻿@using Orchard.ContentManagement;
+@{ 
+    var blogPost = Model.ContentItem;   
+}
+@Html.Raw(Model.ContentItem.PreviewPart.PreviewText)
+<br />
+<a href="@Url.ItemDisplayUrl((IContent)blogPost)" class="button top-space">Read more</a>

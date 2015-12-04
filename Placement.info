@@ -8,6 +8,15 @@
     <Place Parts_Title="-"
            Parts_Common_Metadata="-"/>
   </Match>
+  <Match ContentType="RecentBlogPosts">
+    <Place Parts_Title="-" />
+  </Match>
+  <Match ContentType="HtmlWidget">
+    <Place Parts_Title="-" />
+  </Match>
+  <Match ContentType="RandomBlogPosts">
+    <Place Parts_Title="-" />
+  </Match>
   <Match ContentType="BlogPost">
     <Match DisplayType="Summary">
       <Place Parts_Common_Body_Summary="Summary:0"

@@ -1,4 +1,5 @@
-﻿.main-header, 
+﻿body,
+.main-header, 
 .quad-promo,
 .left-off-canvas-toggle, 
 p.lead, nav, 
@@ -14,6 +15,9 @@ button,
 .subnav-header a,
 .footer-top, .footer-bottom,
 .widget-recent-blog-posts,
+span,
+span.normal-text,
+p,
 h1, h2, h3, h4, h5, h6{
     font-family: "proxima-nova", "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 }
@@ -113,6 +117,20 @@ color: #555;
 position: relative;
 padding-right: 50px;
 background: url(img/blockquote.png) no-repeat left 7px;
+}
+/* Blog Posts */
+.widget-recent-blog-posts a:not(.button), 
+.widget-random-blog-posts a:not(.button), 
+.widget-recent-blog-posts a:not(.button):hover,
+.widget-random-blog-posts a:not(.button):hover {
+	color: #c0c0c0;
+}
+.widget-random-blog-posts{
+	background-color: #efefef;
+	color: black;
+	overflow-y: hidden;
+	padding-top:50px;
+	font-family: proxima-nova, 'Open Sans', 'Helvetica Neue', Helvetica, Helvetica, Arial, sans-serif;
 }
 
 /*1554*/

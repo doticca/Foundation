@@ -52,9 +52,19 @@
                 }
             </div>
         }
-        else if (Model.Content != null)
+        else if (Model.Content != null || Model.BeforeContent != null || Model.AfterContent != null)
         {
-            @Display(Model.Content)
+            if (Model.BeforeContent != null)
+            {
+                @Display(Model.BeforeContent)
+            }
+            if (Model.Content != null){
+                @Display(Model.Content)
+            }
+            if (Model.AfterContent != null)
+            {
+                @Display(Model.AfterContent)
+            }
         }
 
         @if (Model.FooterQuadFirst != null || Model.FooterQuadSecond != null || Model.FooterQuadThird != null || Model.FooterQuadFourth != null ||
@@ -134,3 +144,10 @@
     </section>
 </div>
 @tag.EndElement
+@using (Script.Foot())
+{
+    if (Model.Javascript != null)
+    {
+        @Display(Model.Javascript)
+    }
+}
